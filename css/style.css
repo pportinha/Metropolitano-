@@ -1,0 +1,208 @@
+/* ==========================================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS (Visual Total Black)
+   ========================================================================== */
+:root {
+    --bg-main: #0a0a0a;   /* Preto profundo de fundo */
+    --bg-card: #121212;   /* Preto ligeiramente mais claro para destacar os cartões */
+    --bg-widget: #1a1a1a; /* Cinza grafite para os elementos internos */
+    --gold: #ffcc00;      /* O dourado vivo do Metropolitano */
+    --text-gray: #a0a0a0; /* Cinza claro para leitura perfeita sobre o preto */
+    --border-color: #262626; /* Linhas de divisão subtis */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content { flex: 1; }
+a { text-decoration: none; }
+
+/* ==========================================================================
+   2. ELEMENTOS DA PÁGINA (INDEX)
+   ========================================================================== */
+
+/* Hero Banner */
+.hero-section {
+    /* Ajustado o gradiente para fundir perfeitamente com o fundo preto puro */
+    background: linear-gradient(rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.95)), 
+                url('../assets/hero-bg.jpg') no-repeat center center/cover;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+}
+
+.hero-text p {
+    color: var(--text-gray);
+    font-size: 18px;
+    margin: 0 0 25px 0;
+    max-width: 600px;
+}
+
+/* Botões */
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--bg-main);
+    padding: 12px 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-radius: 6px;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-gold:hover {
+    background-color: #ffe066;
+    transform: translateY(-2px);
+}
+
+/* Grelha e Cartões */
+.home-grid {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.home-card {
+    background-color: var(--bg-card);
+    flex: 1;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.home-card h2 {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* Widget de Jogo */
+.match-widget {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--bg-widget);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+}
+
+.team-shield {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    background-color: rgba(255, 204, 0, 0.05);
+}
+
+.team-shield.rival {
+    border-color: #404040;
+    color: var(--text-gray);
+    background-color: transparent;
+}
+
+.vs {
+    color: #f85149;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.match-info p {
+    color: var(--text-gray);
+    margin: 0 0 8px 0;
+}
+
+.btn-ticket {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-ticket:hover {
+    background-color: var(--gold);
+    color: var(--bg-main);
+}
+
+/* Notícias */
+.news-item {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.news-item:last-child { border: none; }
+
+.news-date {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.news-item h3 {
+    font-size: 17px;
+    margin: 5px 0;
+}
+
+.news-item p {
+    color: var(--text-gray);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Imagens dos Escudos */
+.shield-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   3. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .home-grid { flex-direction: column; margin: 20px auto; gap: 20px; }
+    .hero-text h1 { font-size: 32px; }
+}

@@ -1,34 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube de Futebol</title>
-    <!-- Ligação ao ficheiro CSS externo -->
-    <link rel="stylesheet" href="style.css">
+    <title>Metropolitano - Website Oficial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+
 </head>
 <body>
 
- <!-- Elemento estrutural de navegação -->
-     <nav class="navbar">
-        <!-- Logótipo à esquerda -->
-        <a href="#" class="navbar-brand">
-            <div class="brand-icon"></div>
-            <span class="brand-text">Metropolitano</span>
-        </a>
+    <div id="navbar-placeholder"></div>
 
-       <!-- Menu  -->
-        <ul class="navbar-menu">
-            <li><a href="#" >Inicio</a></li>
-            <li><a href="#" >Notícias</a></li>
-            <li><a href="#">Jogos</a></li>
-            <li><a href="#">Plantel</a></li>
-            <li><a href="#">Clube</a></li>
-            <li><a href="#">Bilheteira</a></li>
-        </ul>
-    </nav>
+    <main class="main-content">
+        
+        <section class="hero-section">
+            <div class="hero-overlay">
+                <div class="hero-text">
+                    <h1>Rumo à Glória</h1>
+                    <p>Acompanha o Metropolitano em todas as frentes. Juntos somos mais fortes.</p>
+                    <a href="plantel.html" class="btn-gold">Conhece o Plantel</a>
+                </div>
+            </div>
+        </section>
 
+        <div class="home-grid">
+            
+            <section class="home-card proximo-jogo">
+        <h2>Próximo Jogo</h2>
+        <div class="match-widget">
+            <div class="team">
+                <div class="team-shield">
+                    <img src="assets/logo2.0.png" alt="Metropolitano" class="shield-img">
+                </div>
+                <span>Metropolitano</span>
+            </div>
+            
+            <div class="vs">VS</div>
+            
+            <div class="team">
+                <div class="team-shield rival">
+                    <img src="assets/logo2.png" alt="Rival FC" class="shield-img">
+                </div>
+                <span>Rival FC</span>
+            </div>
+        </div>
+                <div class="match-info">
+                    <p><strong>Competição:</strong> Liga Nacional</p>
+                    <p><strong>Estádio:</strong> Arena Metropolitano</p>
+                    <p><strong>Data:</strong> Próximo Domingo, às 16:00</p>
+                    <a href="bilheteira.html" class="btn-ticket">Comprar Bilhete</a>
+                </div>
+            </section>
 
+            <section class="home-card últimas-noticias">
+                <h2>Últimas Notícias</h2>
+                
+                <article class="news-item">
+                    <span class="news-date">Hoje</span>
+                    <h3>Preparação intensa para o grande clássico</h3>
+                    <p>A equipa realizou o último treino técnico à porta fechada na Arena...</p>
+                </article>
+
+                <article class="news-item">
+                    <span class="news-date">Ontem</span>
+                    <h3>Novo reforço já treina com o grupo</h3>
+                    <p>O mais recente avançado do Metropolitano passou nos exames médicos e já integrou os trabalhos.</p>
+                </article>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Metropolitano Clube de Futebol. Projeto Final de Desenvolvimento Web.</p>
+    </footer>
+    
+    <script src="js/navbar.js"></script>
+    <script src="js/footer.js"></script>
     
 </body>
 </html>

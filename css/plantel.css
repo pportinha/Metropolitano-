@@ -1,0 +1,147 @@
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DA PÁGINA DO PLANTEL (css/plantel.css)
+   ========================================================================== */
+
+/* Banner do Topo da Página */
+.page-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-header h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+}
+
+.page-header p {
+    color: var(--text-gray);
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Contentor do Roster (Grelha Mosaico Flexbox) */
+.roster-container {
+    display: flex;
+    flex-wrap: wrap;       /* Essencial para criar o formato mosaico */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 25px;
+    box-sizing: border-box;
+}
+
+/* Cartão do Jogador Individual */
+.player-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    /* Flexbox inteligente: 4 colunas no PC (25% do ecrã menos o gap) */
+    flex: 1 1 calc(25% - 20px); 
+    min-width: 220px; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.1);
+}
+
+/* Número do Jogador */
+.player-number {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 28px;
+    font-weight: 900;
+    color: rgba(255, 204, 0, 0.15);
+    transition: color 0.3s ease;
+}
+
+.player-card:hover .player-number {
+    color: var(--gold);
+}
+
+/* Contentor da Foto (Corrigido para conter avatares/placeholders) */
+.player-img-container {
+    width: 130px;
+    height: 130px;
+    background-color: var(--bg-widget);
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    overflow: hidden; /* CRUCIAL: Corta as arestas das imagens para ficarem redondas */
+    transition: border-color 0.3s ease;
+}
+
+.player-card:hover .player-img-container {
+    border-color: var(--gold);
+}
+
+/* Imagem do Jogador adaptada para qualquer proporção */
+.player-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher o círculo de forma perfeita */
+}
+
+/* Informações e Estatísticas */
+.player-info {
+    text-align: center;
+    width: 100%;
+}
+
+.player-position {
+    color: var(--text-gray);
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.player-info h3 {
+    font-size: 18px;
+    margin: 5px 0 0 0;
+    color: #ffffff;
+}
+
+.player-stats {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .player-card { flex: 1 1 calc(33.333% - 20px); } /* 3 Colunas em Tablets */
+}
+
+@media (max-width: 768px) {
+    .player-card { flex: 1 1 calc(50% - 20px); }    /* 2 Colunas em ecrãs pequenos */
+}
+
+@media (max-width: 480px) {
+    .player-card { flex: 1 1 100%; }                /* 1 Coluna em Telemóveis */
+}

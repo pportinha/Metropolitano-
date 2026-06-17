@@ -1,0 +1,190 @@
+/* ==========================================================================
+   1. ESTILOS BASE (COMPUTADOR) - Lido primeiro
+   ========================================================================== */
+
+/* Contentor principal */
+.navbar {
+    background-color: #0a0a0a;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+    box-shadow: 0 4px 10px rgba(23, 1, 1, 0.3);
+}
+
+/* Logótipo */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.brand-icon {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #574d26;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4b411;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 12px;
+}
+
+.brand-text {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Menu principal */
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+}
+
+.navbar-menu li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Links normais (cor cinzenta/subtil para dar contraste com o hover) */
+.navbar-menu a {
+    color: #e1eeff; 
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efeito hover (Passar o rato fica branco) */
+.navbar-menu a:hover {
+    color: #ffffff;
+}
+
+/* Link ativo (Página atual fica dourado) */
+.navbar-menu a.active {
+    color: #ffcc00;
+    border-bottom: 3px solid #ffcc00;
+}
+.navbar-logo-img {
+    height: 45px;       /* Altura ideal para ficar elegante na barra de 80px */
+    width: auto;         /* Mantém a proporção correta do escudo */
+    margin-right: 12px;  /* Dá o mesmo espaço que tinhas antes para o texto */
+    object-fit: contain;
+}
+
+
+/* ==========================================================================
+   2. MEDIA QUERIES (RESPONSIVIDADE) - Sempre no fim do ficheiro
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    
+    .navbar-brand {
+        margin-right: 0;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-menu li {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar-menu a {
+        padding: 12px 0;
+        width: 100%;
+        border-bottom: none;
+    }
+    
+    /* Ajuste para o link ativo não ter a borda de baixo no telemóvel */
+    .navbar-menu a.active {
+        border-bottom: none;
+        background-color: rgba(255, 204, 0, 0.1);
+        border-radius: 4px;
+    }
+
+    /* Se este código estiver no navbar.css, remove a regra do .home-grid e do .hero-text daqui 
+       e mete-as no fim do teu style.css! */
+    .home-grid {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+}
+/* Formulário de Pesquisa */
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Empurra a barra de pesquisa totalmente para a direita */
+    background-color: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 20px; /* Bordas arredondadas estilo pílula */
+    padding: 4px 12px;
+}
+
+.search-form input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 6px 10px;
+    font-size: 14px;
+    outline: none; /* Remove a borda amarela nativa ao clicar */
+    width: 180px;
+    transition: width 0.3s ease;
+}
+
+/* Efeito dinâmico: a barra estica ligeiramente quando clicas nela */
+.search-form input:focus {
+    width: 220px;
+}
+
+.search-form button {
+    background: transparent;
+    border: none;
+    color: #ffcc00;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+}
+
+/* Ajuste rápido para ecrãs mais pequenos (Telemóvel) */
+@media (max-width: 768px) {
+    .search-form {
+        margin-left: 0;
+        width: 100%;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+    .search-form input {
+        width: 100%;
+    }
+}
